@@ -17,7 +17,7 @@ export class PostsComponent implements OnInit {
   public posts: Post[] = [];
   public filteredPosts: boolean = false;
   public postOpened = false;
-  @Input() postComment: string = "";
+  @Input() postComment: string = '';
   public postModel: Post = {
     title: '',
     content: '',
@@ -85,13 +85,13 @@ export class PostsComponent implements OnInit {
 
   newComment(): void {
     let comment: PostComment = {
-      "user": this.user ? this.user.username : "guest",
-      "content": this.postComment,
-      "date": new Date().toLocaleDateString('en-gb')
-    }
-    this.postsService.newComment(comment, this.postModel).subscribe(post => {
+      user: this.user ? this.user.username : 'guest',
+      content: this.postComment,
+      date: new Date().toLocaleDateString('en-gb'),
+    };
+    this.postsService.newComment(comment, this.postModel).subscribe((post) => {
       this.postModel = post;
-      this.postComment = "";
+      this.postComment = '';
     });
   }
 

@@ -69,16 +69,20 @@
       <p *ngIf="this.postOpened && this.postModel.id === post.id">
         {{ post.content }}
       </p>
-      <p class="author" (click)="this.getPostsByUser(post.author)">-{{
-        post.author | uppercase
-      }}</p>
-      <p class="date" *ngIf="!post.pending"> {{post.publishDate}}</p>
+      <p class="author" (click)="this.getPostsByUser(post.author)">
+        -{{ post.author | uppercase }}
+      </p>
+      <p class="date" *ngIf="!post.pending">{{ post.publishDate }}</p>
     </span>
     <br />
     <div *ngIf="post.pending">
       <h3 *ngIf="post.rejected"><strong>REJECTED</strong></h3>
 
-      <button *ngIf="this.user?.isEditor" class="btn btn-success" (click)="this.approvePost(post.id)">
+      <button
+        *ngIf="this.user?.isEditor"
+        class="btn btn-success"
+        (click)="this.approvePost(post.id)"
+      >
         approve
       </button>
       <button
@@ -123,18 +127,23 @@
       <div class="container comments">
         <h3>Comment here</h3>
         <div class="form-group">
-            <label>Comment</label>
-            <textarea rows="5" class="form-control" type="text" [(ngModel)]="this.postComment"></textarea>
-            <button class="" (click)="this.newComment()">submit</button>
+          <label>Comment</label>
+          <textarea
+            rows="5"
+            class="form-control"
+            type="text"
+            [(ngModel)]="this.postComment"
+          ></textarea>
+          <button class="" (click)="this.newComment()">submit</button>
         </div>
       </div>
     </div>
 
     <div *ngIf="this.postModel.comments && post.id === this.postModel.id">
       <div *ngFor="let comment of this.postModel.comments">
-        <h3>{{comment.user}}</h3>
-        <p>{{comment.content}}</p>
-        <p>{{comment.date}}</p>
+        <h3>{{ comment.user }}</h3>
+        <p>{{ comment.content }}</p>
+        <p>{{ comment.date }}</p>
       </div>
     </div>
   </div>

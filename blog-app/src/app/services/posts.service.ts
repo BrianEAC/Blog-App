@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Post } from '../interfaces/post';
 import { environment } from 'src/environments/environment';
-import { map } from 'rxjs/operators';
 import { PostComment } from '../interfaces/comment';
 
 ////REQUESTS PARA TRAER LOS DATOS DE LOS POSTS DEL BLOG
@@ -51,8 +50,10 @@ export class PostsService {
 
   newComment(comment: PostComment, postModel: Post): Observable<Post> {
     let oldComments = postModel.comments;
-    let newComments = oldComments!.concat(comment) //suplanta el array de comentarios por uno con el nuevo
-    return this.http.patch<Post>(`${environment.urlPosts}/${postModel.id}`,{comments: newComments} )
+    let newComments = oldComments!.concat(comment); //suplanta el array de comentarios por uno con el nuevo
+    return this.http.patch<Post>(`${environment.urlPosts}/${postModel.id}`, {
+      comments: newComments,
+    });
   }
 
   openPostForm(): void {
