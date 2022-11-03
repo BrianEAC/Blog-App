@@ -5,4 +5,5 @@ export interface Post {
     author: string;
     id: number;
     pending: boolean;
+    rejected: boolean;
 }

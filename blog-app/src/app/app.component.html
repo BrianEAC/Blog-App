@@ -1,2 +1,3 @@
-<app-login-form *ngIf="!this.loginService.getUser();"></app-login-form>
-<app-posts *ngIf="this.loginService.getUser();"></app-posts>
+<app-posts-form></app-posts-form>
+<app-login-form *ngIf="!this.loginService.loggedIn"></app-login-form>
+<app-posts *ngIf="this.loginService.loggedIn && !this.postsService.postFormOpen && !this.postsService.editFormOpen"></app-posts>

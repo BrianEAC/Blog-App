@@ -9,8 +9,9 @@
         <label for="password">Password</label>
         <input class="form-control" type="text" [(ngModel)]="this.password">
     </div>
+    <button class="btn btn-primary" (click)="this.authenticate()">login</button>
     <div class="login-guest">
         <h3>or</h3>
-        <button class="btn btn-primary" (click)="this.loginService.login()">enter as guest</button>
+        <button class="btn btn-success" (click)="this.loginService.login()">enter as guest</button>
     </div>
 </div>

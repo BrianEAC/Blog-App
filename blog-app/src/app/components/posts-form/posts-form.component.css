@@ -1,0 +1,9 @@
+.bi-arrow-left {
+    font-size: 2em;
+    margin-left: 2%;
+    display: inline;
+}
+
+.bi-arrow-left:hover {
+    cursor: pointer;
+}

@@ -1,8 +1,57 @@
-<button (click)="this.loginService.switchEditor()">ss</button>
-<div *ngFor="let post of posts">
-    <h2><a (click)="this.getPostsByUser(post.author)">{{post.author}}</a></h2>
-    <p>{{post.content}}</p>
-    <p *ngIf="post.pending==true">PENDING</p>
-    <button (click)="this.deletePost(post.id)">delete</button>
+<i
+  *ngIf="this.filteredPosts"
+  (click)="this.getApprovedPosts()"
+  class="bi bi-arrow-left pull-left"
+></i>
+<div class="container upper-buttons">
+  <button class="btn btn-success" (click)="this.openPostForm()">
+    new post
+  </button>
+
+  <button
+    class="btn btn-danger pull-right"
+    (click)="this.loginService.logout()"
+  >
+    log out
+  </button>
+  <button
+    *ngIf="this.loginService.user"
+    class="btn btn-warning pull-right"
+    (click)="this.getRejectedPosts(this.loginService.user.username)"
+  >
+    rejected
+  </button>
+  <button
+    class="btn btn-info pull-right"
+    *ngIf="this.user?.isEditor"
+    (click)="this.getPendingPosts();"
+  >
+    see pending
+  </button>
 </div>
 
+<div class="container post">
+  <div *ngFor="let post of posts">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
+    <small class="author" (click)="this.getPostsByUser(post.author)">{{
+      post.author
+    }}</small>
+    <div class="row">
+      <div *ngIf="post.pending == true">
+        <h3>PENDING</h3>
+
+        <button (click)="this.approvePost(post.id)">approve</button>
+        <button (click)="this.rejectPost(post.id)">reject</button>
+      </div>
+
+      
+        <button  *ngIf="post.author === this.loginService.getUser()?.username" (click)="this.openEditForm(post.id)">edit</button>
+      
+
+      <button *ngIf="this.user?.isEditor" (click)="this.deletePost(post.id)">
+        delete
+      </button>
+    </div>
+  </div>
+</div>

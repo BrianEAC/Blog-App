@@ -10,45 +10,75 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./posts.component.css'],
 })
 export class PostsComponent implements OnInit {
-  private user?: User;
+  public user?: User;
   public posts: Post[] = [];
+  public filteredPosts: boolean = false;
 
-  constructor(private postsService: PostsService, public loginService: LoginService) {}
+  constructor(
+    public postsService: PostsService,
+    public loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
-    this.getPosts();
+    this.getUser();
+    this.getApprovedPosts();
   }
 
-  getPosts(): void {
+  getAllPosts(): void {
+    this.filteredPosts = false;
     if (this.user && this.user!.isEditor) {
       this.postsService
         .getPendingPosts()
         .subscribe((pendingPosts) => (this.posts = pendingPosts));
-    }
-    else this.postsService.getPosts().subscribe((posts) => (this.posts = posts));
+    } else
+      this.postsService.getAllPosts().subscribe((posts) => this.posts = posts);
   }
 
   getPendingPosts(): void {
+    this.filteredPosts = true;
     this.postsService
       .getPendingPosts()
-      .subscribe((pendingPosts) => (this.posts = pendingPosts));
+      .subscribe((pendingPosts) => this.posts = pendingPosts);
   }
 
   getPostsByUser(username: string): void {
+    this.filteredPosts = true;
+    this.postsService.getPostsByUser(username).subscribe((userPosts) => this.posts = userPosts);
+  }
+
+  getApprovedPosts(): void {
+    this.filteredPosts = false;
     this.postsService
-      .getPostsByUser(username)
-      .subscribe((userPosts) => (this.posts = userPosts));
+      .getApprovedPosts()
+      .subscribe((approvedPosts) => this.posts = approvedPosts);
+  }
+
+  getRejectedPosts(author: string) {
+    this.filteredPosts = true;
+    this.postsService.getRejectedPosts(author).subscribe((rejectedPosts) => this.posts = rejectedPosts)
   }
 
   deletePost(id: number): void {
-    this.postsService.deletePost(id).subscribe(() => this.getPosts());
+    this.postsService.deletePost(id).subscribe(() => this.getAllPosts());
   }
 
   getUser(): void {
     this.user = this.loginService.getUser();
   }
 
+  openPostForm(): void {
+    this.postsService.openPostForm();
+  }
 
-  
-  
+  openEditForm(id: number): void {
+    this.postsService.openEditForm(id);
+  }
+
+  approvePost(id: number): void {
+    this.postsService.approvePost(id).subscribe(() => this.getApprovedPosts());
+  }
+
+  rejectPost(id: number): void {
+    this.postsService.rejectPost(id).subscribe(() => this.getRejectedPosts(this.loginService.getUser()!.username));
+  }
 }

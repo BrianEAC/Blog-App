@@ -1,7 +1,26 @@
-h2 {
+.author:hover{
+    text-decoration: underline;
     cursor: pointer;
 }
 
-h2:hover{
-    color: green;
+.bi-arrow-left {
+    font-size: 2em;
+    margin-left: 2%;
+    display: inline;
+}
+
+.bi-arrow-left:hover {
+    cursor: pointer;
+}
+
+.upper-buttons {
+    margin-top: 2%;
+}
+
+.pull-right {
+    margin-left: 2%;
+}
+
+.post {
+    text-align: center;
 }

@@ -2,15 +2,18 @@ import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { PostsService } from './posts.service';
+import { Post } from '../interfaces/post';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public postsService: PostsService) { }
 
-  private user?: User;
+  public user?: User;
   public loggedIn = false;
   
   login() {
@@ -20,6 +23,8 @@ export class LoginService {
   logout(){
     this.user = undefined;
     this.loggedIn = false;
+    this.postsService.closePostForm();
+    this.postsService.closeEditForm();
   }
 
   getUser(): User | undefined {
@@ -31,8 +36,8 @@ export class LoginService {
     this.login();
   }
 
-  authenticate(username: string, password: string) {
-    return this.http.get(`${environment.urlPosts}?username_like=${username}&password_like${password}`);
+  authenticate(username: string, password: string): Observable<User> {
+    return this.http.get<User>(`${environment.urlUsers}?username=${username}&password=${password}`);
   }
 
 

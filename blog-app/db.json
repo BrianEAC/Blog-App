@@ -15,33 +15,48 @@
       "pending": false
     },
     {
+      "title": "sfasfasfsafaasfasfasfasfsd-server",
+      "content": "gasd ffsafasdrom post",
+      "author": "tessio",
+      "id": 123,
+      "pending": false
+    },
+    {
       "title": "2json-asdasgfdsfgserver",
       "content": "contentsdgfsdfasf from post",
       "author": "clemenza",
       "id": 54,
-      "pending": true
+      "pending": false
     },
     {
       "title": "512sadasda3sdffsacsdagas2sd24js213on-4123e1",
       "content": "dfgdsdfsdfsdfdsfdsfsdff from post",
       "author": "tessio",
       "id": 34,
-      "pending": true
+      "pending": false
     },
     {
-      "title": "r134rasd-4123e1",
-      "content": "vsfsdfsdfadf from post",
+      "title": "new blog",
+      "content": "asdasldasdasd",
+      "author": "abbandando",
+      "pending": false,
+      "rejected": false,
+      "id": 0.6897870510002222
+    },
+    {
+      "title": "sfafsad",
+      "content": "dasfasdfsdafds",
       "author": "tessio",
-      "id": 53,
-      "pending": true
+      "pending": false,
+      "rejected": true,
+      "id": 0.04957050222649295
     }
   ],
   "users": [
     {
       "username": "abbandando",
       "password": "genco",
-      "isEditor": true,
-      "userId": 1
+      "isEditor": true
     },
     {
       "username": "tessio",
