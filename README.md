@@ -28,27 +28,32 @@ SERVICIOS:
 INTERFACES: 
 
 Post <br>
-{<br>
-    title: string;<br>
-    content: string;<br>
-    publishDate?: string;<br>
-    author: string;<br>
-    id: number;<br>
-    pending: boolean;<br>
-    rejected?: boolean;<br>
-    comments?: PostComment[];<br>
-}<br>
+```json
+{
+    title: string;
+    content: string;
+    publishDate?: string;
+    author: string;
+    id: number;
+    pending: boolean;
+    rejected?: boolean;
+    comments?: PostComment[];
+}
+```
 
 PostComment <br>
-{<br>
-    user: string;<br>
-    content: string;<br>
-    date: string;<br>
-}<br>
-
-User <br>
-{<br>
-    username: string;<br>
-    password: string;<br>
-    isEditor: boolean;<br>
+```json
+{
+    user: string;
+    content: string;
+    date: string;
 }
+```
+User <br>
+```json
+{
+    username: string;
+    password: string;
+    isEditor: boolean;
+}
+```
