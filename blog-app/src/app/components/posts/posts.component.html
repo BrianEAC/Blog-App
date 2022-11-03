@@ -1,10 +1,23 @@
 <i
-  *ngIf="this.filteredPosts"
-  (click)="this.getApprovedPosts()"
+  *ngIf="
+    this.filteredPosts ||
+    this.postsService.editFormOpen ||
+    this.postsService.postFormOpen
+  "
+  (click)="
+    this.getApprovedPosts();
+    this.postsService.closePostForm();
+    this.postsService.closeEditForm()
+  "
   class="bi bi-arrow-left pull-left"
 ></i>
+
 <div class="container upper-buttons">
-  <button class="btn btn-success" (click)="this.openPostForm()">
+  <button
+    *ngIf="this.loginService.user"
+    class="btn btn-success"
+    (click)="this.newPost()"
+  >
     new post
   </button>
 
@@ -24,34 +37,85 @@
   <button
     class="btn btn-info pull-right"
     *ngIf="this.user?.isEditor"
-    (click)="this.getPendingPosts();"
+    (click)="this.getPendingPosts()"
   >
     see pending
   </button>
 </div>
 
-<div class="container post">
+<div *ngIf="this.postsService.editFormOpen || this.postsService.postFormOpen">
+  <app-posts-form
+    *ngIf="this.postModel"
+    [postModel]="postModel"
+    (refreshPostsEvent)="this.getApprovedPosts()"
+  ></app-posts-form>
+</div>
+
+<div
+  *ngIf="!this.postsService.editFormOpen && !this.postsService.postFormOpen"
+  class="container post-container"
+>
   <div *ngFor="let post of posts">
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.content }}</p>
-    <small class="author" (click)="this.getPostsByUser(post.author)">{{
-      post.author
-    }}</small>
-    <div class="row">
-      <div *ngIf="post.pending == true">
-        <h3>PENDING</h3>
+    <span class="post">
+      <h2>
+        <a (click)="this.openPost(post.id)">{{ post.title }}</a>
+        <a (click)="this.closePost()"
+          ><i
+            class="bi bi-chevron-up"
+            *ngIf="this.postOpened && this.postModel.id === post.id"
+          ></i
+        ></a>
+      </h2>
+      <p *ngIf="this.postOpened && this.postModel.id === post.id">
+        {{ post.content }}
+      </p>
+      <small class="author" (click)="this.getPostsByUser(post.author)">-{{
+        post.author | uppercase
+      }}</small>
+    </span>
+    <br />
+    <div *ngIf="post.pending">
+      <h3 *ngIf="post.rejected"><strong>REJECTED</strong></h3>
 
-        <button (click)="this.approvePost(post.id)">approve</button>
-        <button (click)="this.rejectPost(post.id)">reject</button>
-      </div>
-
-      
-        <button  *ngIf="post.author === this.loginService.getUser()?.username" (click)="this.openEditForm(post.id)">edit</button>
-      
-
-      <button *ngIf="this.user?.isEditor" (click)="this.deletePost(post.id)">
-        delete
+      <button *ngIf="this.user?.isEditor" class="btn btn-success" (click)="this.approvePost(post.id)">
+        approve
+      </button>
+      <button
+        class="btn btn-warning"
+        *ngIf="!post.rejected"
+        (click)="this.rejectPost(post.id)"
+      >
+        reject
       </button>
     </div>
+
+    <button
+      class="btn btn-info"
+      *ngIf="post.author === this.loginService.getUser()?.username"
+      (click)="this.postsService.openEditForm(); this.setModel(post.id)"
+    >
+      edit
+    </button>
+
+    <button
+      class="btn btn-danger"
+      *ngIf="
+        (this.user?.isEditor || this.user?.username === post.author) &&
+        !post.pending
+      "
+      (click)="this.deletePost(post.id)"
+    >
+      delete
+    </button>
+    <button
+      class="btn btn-danger"
+      *ngIf="
+        (this.user?.isEditor || this.user?.username === post.author) &&
+        post.pending
+      "
+      (click)="this.deletePendingPost(post.id)"
+    >
+      delete
+    </button>
   </div>
 </div>

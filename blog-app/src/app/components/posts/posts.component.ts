@@ -13,6 +13,14 @@ export class PostsComponent implements OnInit {
   public user?: User;
   public posts: Post[] = [];
   public filteredPosts: boolean = false;
+  public postOpened = false;
+  public postModel: Post = {
+    "title": "",
+    "content": "",
+    "author": "",
+    "pending": true,
+    "id": 0
+  };
 
   constructor(
     public postsService: PostsService,
@@ -58,27 +66,58 @@ export class PostsComponent implements OnInit {
     this.postsService.getRejectedPosts(author).subscribe((rejectedPosts) => this.posts = rejectedPosts)
   }
 
-  deletePost(id: number): void {
-    this.postsService.deletePost(id).subscribe(() => this.getAllPosts());
+  newPost(): void {
+    this.clearModel();
+    this.postModel.author = this.loginService.getUser()!.username
+    this.postsService.openPostForm();
   }
+
+  deletePost(id: number): void {
+    this.postsService.deletePost(id).subscribe(() => this.getApprovedPosts());
+  }
+  
+  deletePendingPost(id: number): void {
+    this.postsService.deletePost(id).subscribe(() => this.getPendingPosts())
+  }
+
 
   getUser(): void {
     this.user = this.loginService.getUser();
   }
 
-  openPostForm(): void {
-    this.postsService.openPostForm();
-  }
-
-  openEditForm(id: number): void {
-    this.postsService.openEditForm(id);
-  }
-
   approvePost(id: number): void {
-    this.postsService.approvePost(id).subscribe(() => this.getApprovedPosts());
+    this.postsService.approvePost(id).subscribe(() => this.getPendingPosts());
   }
 
+  
   rejectPost(id: number): void {
-    this.postsService.rejectPost(id).subscribe(() => this.getRejectedPosts(this.loginService.getUser()!.username));
+    this.postsService.rejectPost(id).subscribe(() => this.getPendingPosts());
   }
+
+  setModel(id: number): void {
+    this.postsService.getPostById(id).subscribe(post => {
+      this.postModel = post;
+    })
+  }
+
+  openPost(id: number): void {
+    this.setModel(id);
+    this.postOpened = true;
+  }
+
+  closePost(): void {
+    this.clearModel();
+    this.postOpened = false;
+  }
+
+  clearModel(): void {
+    this.postModel = {
+      "title": "",
+      "content": "",
+      "author": "",
+      "pending": true,
+      "id": Math.random()
+    }
+  }
+  
 }

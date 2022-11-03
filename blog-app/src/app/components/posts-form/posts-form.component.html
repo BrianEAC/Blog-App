@@ -1,47 +1,37 @@
 <div *ngIf="this.postsService.postFormOpen">
-  <i
-    class="bi bi-arrow-left pull-left"
-    (click)="this.postsService.closePostForm()"
-  ></i>
-
   <div class="container login-form">
     <h1>Create Post</h1>
     <div class="form-group">
       <label for="Title">Title</label>
-      <input class="form-control" type="text" [(ngModel)]="this.title" />
+      <input class="form-control" type="text" [(ngModel)]="this.postModel!.title" />
     </div>
     <div class="form-group">
       <label for="Content">Content</label>
       <textarea
         rows="15"
         class="form-control"
-        [(ngModel)]="this.content"
+        [(ngModel)]="this.postModel!.content"
       ></textarea>
     </div>
-    <button class="btn btn-primary" (click)="this.submitPost()">Submit</button>
+    <button class="btn btn-primary" (click)="this.submitPost();">Submit</button>
   </div>
 </div>
 
 <div *ngIf="this.postsService.editFormOpen">
-  <i
-    class="bi bi-arrow-left pull-left"
-    (click)="this.postsService.closeEditForm()"
-  ></i>
-
   <div class="container login-form">
     <h1>Edit Post</h1>
     <div class="form-group">
       <label for="Title">Title</label>
-      <input class="form-control" type="text" [(ngModel)]="this.title" />
+      <input class="form-control" type="text" [(ngModel)]="this.postModel!.title" />
     </div>
     <div class="form-group">
       <label for="Content">Content</label>
       <textarea
         rows="15"
         class="form-control"
-        [(ngModel)]="this.content"
+        [(ngModel)]="this.postModel!.content"
       ></textarea>
     </div>
-    <button class="btn btn-primary" (click)="this.editPost()">Submit</button>
+    <button class="btn btn-primary" (click)="this.editPost();">Submit</button>
   </div>
 </div>

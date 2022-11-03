@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Post } from '../interfaces/post';
 import { environment } from 'src/environments/environment';
-import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,6 @@ export class PostsService {
   
   public postFormOpen: boolean = false;
   public editFormOpen: boolean = false;
-  public idToEdit?: number;
 
   constructor(private http: HttpClient) { }
 
@@ -33,7 +31,7 @@ export class PostsService {
   }
 
   getApprovedPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${environment.urlPosts}?pending=false&rejected=false`);
+    return this.http.get<Post[]>(`${environment.urlPosts}?pending=false`);
   }
 
   getRejectedPosts(author: string): Observable<Post[]> {
@@ -52,8 +50,7 @@ export class PostsService {
     this.postFormOpen = false;
   }
 
-  openEditForm(id: number): void {
-    this.idToEdit = id;
+  openEditForm(): void {
     this.editFormOpen = true;
   }
   
@@ -62,18 +59,22 @@ export class PostsService {
   }
 
   submitPost(post: Post): Observable<Post> {
+    post.id = Math.random()
     return this.http.post<Post>(environment.urlPosts, post)
   }
 
   editPost(post: Post): Observable<Post> {
-    return this.http.put<Post>(`environment.urlPosts/${post.id}`, post)
+    post.pending = true;
+    post.rejected = false;
+    return this.http.put<Post>(`${environment.urlPosts}/${post.id}`, post)
   }
 
   approvePost(id: number): Observable<Post> {
-    return this.http.patch<Post>(`${environment.urlPosts}/${id}`,{"pending": false})
+    let publishDate = new Date()
+    return this.http.patch<Post>(`${environment.urlPosts}/${id}`,{"pending": false, "publishDate": publishDate})
   }
 
   rejectPost(id: number): Observable<Post> {
-    return this.http.patch<Post>(`${environment.urlPosts}/${id}`, {"pending": false, "rejected": true})
+    return this.http.patch<Post>(`${environment.urlPosts}/${id}`, {"pending": true, "rejected": true})
   }
 }

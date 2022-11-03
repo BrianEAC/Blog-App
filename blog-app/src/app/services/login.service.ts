@@ -40,13 +40,4 @@ export class LoginService {
     return this.http.get<User>(`${environment.urlUsers}?username=${username}&password=${password}`);
   }
 
-
-
-
-
-  //***** funcion agregada para simplificar el cambio de rol ***** 
-  switchEditor() {
-    this.user ? this.user.isEditor = !this.user.isEditor : alert("not logged in");
-  }
-
 }
