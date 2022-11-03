@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "title": "asd-server",
+      "content": "gasd from post",
+      "author": "abbandando",
+      "id": 5,
+      "pending": false
+    },
+    {
+      "title": "sfasfasfsafasd-server",
+      "content": "gasd ffsafasdrom post",
+      "author": "abbandando",
+      "id": 4,
+      "pending": false
+    },
+    {
+      "title": "2json-asdasgfdsfgserver",
+      "content": "contentsdgfsdfasf from post",
+      "author": "clemenza",
+      "id": 54,
+      "pending": true
+    },
+    {
+      "title": "512sadasda3sdffsacsdagas2sd24js213on-4123e1",
+      "content": "dfgdsdfsdfsdfdsfdsfsdff from post",
+      "author": "tessio",
+      "id": 34,
+      "pending": true
+    },
+    {
+      "title": "r134rasd-4123e1",
+      "content": "vsfsdfsdfadf from post",
+      "author": "tessio",
+      "id": 53,
+      "pending": true
+    }
+  ],
+  "users": [
+    {
+      "username": "abbandando",
+      "password": "genco",
+      "isEditor": true,
+      "userId": 1
+    },
+    {
+      "username": "tessio",
+      "password": "salvatore",
+      "isEditor": false
+    },
+    {
+      "username": "clemenza",
+      "password": "peter",
+      "isEditor": false
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

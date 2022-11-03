@@ -1,0 +1,16 @@
+
+<div class="container login-form">
+    <h1>Log In</h1>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" type="text" [(ngModel)]="this.username">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" type="text" [(ngModel)]="this.password">
+    </div>
+    <div class="login-guest">
+        <h3>or</h3>
+        <button class="btn btn-primary" (click)="this.loginService.login()">enter as guest</button>
+    </div>
+</div>
