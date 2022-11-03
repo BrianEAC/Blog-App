@@ -12,12 +12,14 @@ CREDENCIALES: -Editor: username: abbandando
                        username: clemenza
                        password: peter
 
-COMPONENTES: <br>
+COMPONENTES: 
+
 -login-form: formulario de carga de credenciales
 -posts: vista general de la lista de posts, con detalle y comentarios
 -post-form: formulario de carga de nuevos posts y edicion
 
-SERVICIOS: <br>
+SERVICIOS: 
+
 -login: para contrastar las credenciales ingresadas con las guardadas en la base y setear el usuario activo
 -posts: para realizar todas las requests para traer los posts segun distintos parametros
            
