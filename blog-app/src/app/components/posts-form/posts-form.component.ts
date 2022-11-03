@@ -3,6 +3,7 @@ import { Post } from 'src/app/interfaces/post';
 import { LoginService } from 'src/app/services/login.service';
 import { PostsService } from 'src/app/services/posts.service';
 
+//COMPONENTE DE CARGA Y EDICION DE POSTS
 
 @Component({
   selector: 'app-posts-form',

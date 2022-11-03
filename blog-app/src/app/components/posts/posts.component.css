@@ -32,3 +32,12 @@
 .author {
     color: grey;
 }
+
+.date { 
+    font-size: x-small;
+    color: slateblue;
+}
+
+.comments {
+    max-width: 60%
+}

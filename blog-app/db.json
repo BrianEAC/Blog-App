@@ -6,7 +6,50 @@
       "author": "abbandando",
       "pending": false,
       "id": 0.19339738397161077,
-      "publishDate": "2022-11-03T17:56:15.497Z"
+      "publishDate": "3/11/2022",
+      "comments": [
+        {
+          "user": "abbandando",
+          "content": "sss",
+          "date": "2022-11-03T18:06:40.936Z"
+        },
+        {
+          "user": "abbandando",
+          "content": "dsads",
+          "date": "2021-11-03T18:06:40.936Z"
+        },
+        {
+          "user": "guest",
+          "content": "sdasdasdasdadsa",
+          "date": "2022-11-03T20:14:48.813Z"
+        },
+        {
+          "user": "guest",
+          "content": "asfasf",
+          "date": "2022-11-03T20:16:14.671Z"
+        },
+        {
+          "user": "guest",
+          "content": "asdasdas",
+          "date": "2022-11-03T20:16:58.065Z"
+        },
+        {
+          "user": "guest",
+          "content": "asdasdadsd",
+          "date": "2022-11-03T20:19:32.960Z"
+        },
+        {
+          "user": "guest",
+          "content": "qqq",
+          "date": "2022-11-03T20:19:39.962Z"
+        },
+        {
+          "user": "guest",
+          "content": "asfasfa",
+          "date": "03/11/2022"
+        }
+      ],
+      "date": "03/11/2022"
     },
     {
       "title": "Isnteger at gravida sem",
@@ -15,7 +58,7 @@
       "pending": false,
       "id": 0.33946856156282457,
       "rejected": true,
-      "publishDate": "2022-11-03T17:57:05.073Z"
+      "publishDate": "3/11/2022"
     },
     {
       "title": "Nullam id tortor id urna",
@@ -23,7 +66,7 @@
       "author": "clemenza",
       "pending": false,
       "id": 0.6511651583709888,
-      "publishDate": "2022-11-03T18:01:29.097Z"
+      "publishDate": "3/11/2022"
     },
     {
       "title": "Maecenas rhoncus elit orci",
@@ -31,15 +74,16 @@
       "author": "tessio",
       "pending": false,
       "id": 0.11231709823666391,
-      "publishDate": "2022-11-03T18:01:32.762Z"
+      "publishDate": "3/11/2022"
     },
     {
       "title": " Curabitur congue eros",
       "content": "Phasellus ac elit vel sapien condimentum tincidunt eu maximus mauris. Nulla sit amet maximus ex, in suscipit risus. Integer eros mauris, efficitur id lectus sit amet, sollicitudin tincidunt turpis. Nunc non sollicitudin lorem. Phasellus sed sagittis augue, vitae porta dolor. Cras eu urna accumsan, efficitur odio quis, finibus sem. Sed mollis felis eget risus dictum laoreet. Pellentesque sapien ex, rutrum sed dolor at, pellentesque feugiat tortor. Ut sed hendrerit nunc, efficitur vehicula libero. Pellentesque vel auctor eros, nec laoreet est. Duis at sapien pellentesque, lobortis lectus ultrices, iaculis velit.\n\nSed et sodales arcu. Phasellus fringilla consequat elit, at blandit felis tempor sit amet. Ut eget commodo quam, in pretium dui. Nullam faucibus pretium metus eget vehicula. Etiam scelerisque turpis id dui faucibus aliquam. Sed malesuada fermentum libero, nec rutrum eros facilisis vitae. Nullam accumsan mi sed accumsan gravida. Nullam iaculis mauris id risus eleifend, a tristique nulla efficitur. Aenean blandit lectus elit, id scelerisque tellus auctor a. Praesent at consequat neque, in pulvinar quam. Maecenas non mauris nec erat interdum tincidunt eu at felis. Sed ut laoreet libero. Vestibulum volutpat tempor nibh, eget pharetra elit facilisis quis.",
       "author": "tessio",
-      "pending": true,
+      "pending": false,
       "id": 0.6588241901469347,
-      "rejected": true
+      "rejected": true,
+      "publishDate": "3/11/2022"
     },
     {
       "title": "Maecenas aliquet eros",
@@ -47,7 +91,7 @@
       "author": "abbandando",
       "pending": false,
       "id": 0.4324804503692612,
-      "publishDate": "2022-11-03T18:01:58.327Z"
+      "publishDate": "3/11/2022"
     },
     {
       "title": "Integer finibus elementum",
@@ -55,7 +99,7 @@
       "author": "tessio",
       "pending": false,
       "id": 0.7103608595747914,
-      "publishDate": "2022-11-03T18:06:40.936Z"
+      "publishDate": "3/11/2022"
     }
   ],
   "users": [
@@ -74,8 +118,5 @@
       "password": "peter",
       "isEditor": false
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

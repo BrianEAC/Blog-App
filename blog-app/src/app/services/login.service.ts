@@ -6,21 +6,22 @@ import { Observable } from 'rxjs';
 import { PostsService } from './posts.service';
 import { Post } from '../interfaces/post';
 
+//REQUESTS PARA MANEJAR LAS CREDENCIALES DE USUARIOS
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-
-  constructor(private http: HttpClient, public postsService: PostsService) { }
+  constructor(private http: HttpClient, public postsService: PostsService) {}
 
   public user?: User;
   public loggedIn = false;
-  
+
   login() {
     this.loggedIn = true;
   }
 
-  logout(){
+  logout() {
     this.user = undefined;
     this.loggedIn = false;
     this.postsService.closePostForm();
@@ -37,7 +38,8 @@ export class LoginService {
   }
 
   authenticate(username: string, password: string): Observable<User> {
-    return this.http.get<User>(`${environment.urlUsers}?username=${username}&password=${password}`);
+    return this.http.get<User>(
+      `${environment.urlUsers}?username=${username}&password=${password}`
+    );
   }
-
 }

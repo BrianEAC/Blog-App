@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   urlPosts: "http://localhost:3001/posts",
-  urlUsers: "http://localhost:3001/users"
+  urlUsers: "http://localhost:3001/users",
+  urlComments: "http://localhost:3001/comments"
 };
 
 /*
