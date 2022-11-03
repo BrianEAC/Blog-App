@@ -17,13 +17,13 @@ CREDENCIALES:
 
 COMPONENTES: 
 
--login-form: formulario de carga de credenciales
--posts: vista general de la lista de posts, con detalle y comentarios
--post-form: formulario de carga de nuevos posts y edicion
+-login-form: formulario de carga de credenciales <br> 
+-posts: vista general de la lista de posts, con detalle y comentarios <br>
+-post-form: formulario de carga de nuevos posts y edicion <br>
 
 SERVICIOS: 
 
--login: para contrastar las credenciales ingresadas con las guardadas en la base y setear el usuario activo
+-login: para contrastar las credenciales ingresadas con las guardadas en la base y setear el usuario activo <br>
 -posts: para realizar todas las requests para traer los posts segun distintos parametros
            
 INTERFACES: 
