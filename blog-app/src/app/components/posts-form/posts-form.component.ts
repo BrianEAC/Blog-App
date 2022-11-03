@@ -26,11 +26,17 @@ export class PostsFormComponent implements OnInit {
   }
 
   submitPost(): void {
-    if (this.postModel && this.postModel.title && this.postModel.content) {
+    if (this.postModel && this.postModel.title && this.postModel.content && this.postModel.comments) {
       this.postsService.submitPost(this.postModel).subscribe(() => {
         this.postsService.closePostForm();
         this.refreshPosts();
       });
+    } else if(this.postModel && this.postModel.title && this.postModel.content && !this.postModel.comments) {
+      let newPost = {...this.postModel, "comments":[]}
+      this.postsService.submitPost(newPost).subscribe(()=> {
+        this.postsService.closePostForm();
+        this.refreshPosts();
+      })
     } else alert('missing fields');
   }
 

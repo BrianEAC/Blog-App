@@ -138,6 +138,7 @@ export class PostsComponent implements OnInit {
       author: '',
       pending: true,
       id: Math.random(),
+      comments: []
     };
   }
 

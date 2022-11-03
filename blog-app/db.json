@@ -10,46 +10,30 @@
       "comments": [
         {
           "user": "abbandando",
-          "content": "sss",
-          "date": "2022-11-03T18:06:40.936Z"
+          "content": "Etiam sit amet dui dignissim, semper ante sed, varius est.",
+          "date": "03/11/2022"
         },
         {
-          "user": "abbandando",
-          "content": "dsads",
-          "date": "2021-11-03T18:06:40.936Z"
-        },
-        {
-          "user": "guest",
-          "content": "sdasdasdasdadsa",
-          "date": "2022-11-03T20:14:48.813Z"
+          "user": "tessio",
+          "content": "Nam tempus rutrum enim, ac aliquam eros lobortis id.",
+          "date": "03/11/2022"
         },
         {
           "user": "guest",
-          "content": "asfasf",
-          "date": "2022-11-03T20:16:14.671Z"
+          "content": "In hac habitasse platea dictumst. Aenean eget arcu purus.",
+          "date": "03/11/2022"
         },
         {
           "user": "guest",
-          "content": "asdasdas",
-          "date": "2022-11-03T20:16:58.065Z"
+          "content": "Quisque id justo non orci eleifend finibus.",
+          "date": "03/11/2022"
         },
         {
-          "user": "guest",
-          "content": "asdasdadsd",
-          "date": "2022-11-03T20:19:32.960Z"
-        },
-        {
-          "user": "guest",
-          "content": "qqq",
-          "date": "2022-11-03T20:19:39.962Z"
-        },
-        {
-          "user": "guest",
-          "content": "asfasfa",
+          "user": "clemenza",
+          "content": "Proin egestas ultrices augue, a viverra augue suscipit efficitur.",
           "date": "03/11/2022"
         }
-      ],
-      "date": "03/11/2022"
+      ]
     },
     {
       "title": "Isnteger at gravida sem",
@@ -58,7 +42,24 @@
       "pending": false,
       "id": 0.33946856156282457,
       "rejected": true,
-      "publishDate": "3/11/2022"
+      "publishDate": "3/11/2022",
+      "comments": [
+        {
+          "user": "abbandando",
+          "content": "Nullam lobortis est id ultrices auctor.",
+          "date": "03/11/2022"
+        },
+        {
+          "user": "guest",
+          "content": "Curabitur quis pretium lectus, ac condimentum tellus. ",
+          "date": "03/11/2022"
+        },
+        {
+          "user": "tessio",
+          "content": "Nullam sit amet felis a lorem ultrices convallis.",
+          "date": "03/11/2022"
+        }
+      ]
     },
     {
       "title": "Nullam id tortor id urna",
@@ -66,7 +67,8 @@
       "author": "clemenza",
       "pending": false,
       "id": 0.6511651583709888,
-      "publishDate": "3/11/2022"
+      "publishDate": "3/11/2022",
+      "comments": []
     },
     {
       "title": "Maecenas rhoncus elit orci",
@@ -74,7 +76,8 @@
       "author": "tessio",
       "pending": false,
       "id": 0.11231709823666391,
-      "publishDate": "3/11/2022"
+      "publishDate": "3/11/2022",
+      "comments": []
     },
     {
       "title": " Curabitur congue eros",
@@ -83,7 +86,8 @@
       "pending": false,
       "id": 0.6588241901469347,
       "rejected": true,
-      "publishDate": "3/11/2022"
+      "publishDate": "3/11/2022",
+      "comments": []
     },
     {
       "title": "Maecenas aliquet eros",
@@ -91,7 +95,8 @@
       "author": "abbandando",
       "pending": false,
       "id": 0.4324804503692612,
-      "publishDate": "3/11/2022"
+      "publishDate": "3/11/2022",
+      "comments": []
     },
     {
       "title": "Integer finibus elementum",
@@ -99,7 +104,14 @@
       "author": "tessio",
       "pending": false,
       "id": 0.7103608595747914,
-      "publishDate": "3/11/2022"
+      "publishDate": "3/11/2022",
+      "comments": [
+        {
+          "user": "guest",
+          "content": "Morbi bibendum, ex at tincidunt ornare, nunc ligula tincidunt enim, id vulputate sem eros vel lorem.",
+          "date": "03/11/2022"
+        }
+      ]
     }
   ],
   "users": [
