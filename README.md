@@ -3,14 +3,16 @@ App creada con Angular 12 y json-server para guardar los datos.
 
 Para ejecutar, clonar el repositorio, correr npm install desde la consola y luego npm start.
 
-CREDENCIALES: -Editor: username: abbandando
-                       password: genco
+CREDENCIALES: 
               
               -Writer: username: tessio
                        password: salvatore
                        
                        username: clemenza
                        password: peter
+                       
+              -Editor: username: abbandando
+                       password: genco
 
 COMPONENTES: 
 
