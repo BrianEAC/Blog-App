@@ -1,7 +1,7 @@
 # Blog-App
 App creada con Angular 12 y json-server para guardar los datos.
 
-Para ejecutar, clonar el repositorio, entrar a la carpeta blog-app, correr npm install desde la consola, luego npm install concurrently, y luego npm start.
+Para ejecutar, clonar el repositorio, entrar a la carpeta blog-app, correr npm install desde la consola, y luego npm install concurrently y npm install json-server. Una vez se instalen la aplicacion comienza con npm start.
 El front corre en localhost:4200 y el server en localhost:3001
 
 CREDENCIALES: 
